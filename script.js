@@ -19,6 +19,10 @@ let interval;
 start.addEventListener("click", () => {
 	timer.style.backgroundColor = "#0095ff";
 
+	clearInterval(interval);
+	seconds = 0;
+	timer.textContent = "00:00";
+
 	interval = setInterval(() => {
 		seconds++;
 		timer.textContent = formatTime(seconds);
