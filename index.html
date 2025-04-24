@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Workout Tracker</title>
+
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Workout Tracker</h1>
+
+			<div class="timerSection">
+				<div class="timer">00:00</div>
+				<div class="controls">
+					<button class="start"></button>
+					<button class="pause"></button>
+					<button class="reset"></button>
+				</div>
+			</div>
+
+			<img src="" alt="workoutExercise" class="workoutImage invisible" />
+
+			<div class="workoutSection">
+				<h2 class="day active" onclick="setActiveButton(this)" id="push">Push</h2>
+				<h2 class="day" onclick="setActiveButton(this)" id="pull">Pull</h2>
+				<h2 class="day" onclick="setActiveButton(this)" id="fullBody">Full Body</h2>
+			</div>
+
+			<div class="workout" role="table" aria-label="Day 1 Push workout">
+				<div class="title">Day 1 • Push</div>
+
+				<div class="header">Block</div>
+				<div class="header">Exercise</div>
+				<div class="header sets">Sets × Reps</div>
+				<div class="header rest">Rest</div>
+				<div class="header" style="text-align: center">✓</div>
+
+				<div>Warm‑up (5 min)</div>
+				<div class="exo">Jump‑rope — <strong>2&nbsp;min</strong> steady pace</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">Push‑ups × 20</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Main Lifts</div>
+				<div class="exo">DB Bench Press</div>
+				<div class="sets">3 × 12</div>
+				<div class="rest">90 s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">Incline DB Bench Press</div>
+				<div class="sets">3 × 10</div>
+				<div class="rest">90 s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="shoulder-press">DB Shoulder Press</div>
+				<div class="sets">3 × 10</div>
+				<div class="rest">90 s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Accessories</div>
+				<div class="exo">DB Lateral Raise</div>
+				<div class="sets">3 × 10</div>
+				<div class="rest">60 s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="overhead">DB Overhead Triceps Ext.</div>
+				<div class="sets">3 × 10</div>
+				<div class="rest">120 s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Cardio (15 min)</div>
+				<div class="exo">HIIT run</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+			</div>
+
+			<div class="workout hidden" role="table" aria-label="Day 2 Pull workout">
+				<div class="title">Day&nbsp;2 • Pull</div>
+
+				<div class="header">Block</div>
+				<div class="header">Exercise</div>
+				<div class="header sets">Sets&nbsp;×&nbsp;Reps</div>
+				<div class="header rest">Rest</div>
+				<div class="header" style="text-align: center">✓</div>
+
+				<div>Warm-up&nbsp;(5&nbsp;min)</div>
+				<div class="exo">Jump-rope — <strong>2&nbsp;min</strong> steady</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">Push‑ups × 20</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Main&nbsp;Lifts</div>
+				<div class="exo" id="db-row">One-Arm&nbsp;DB&nbsp;Row</div>
+				<div class="sets">3&nbsp;×&nbsp;10&nbsp;/&nbsp;arm</div>
+				<div class="rest">60–90&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="bent-over-reverse-fly">DB&nbsp;Bent-Over&nbsp;Reverse&nbsp;Fly</div>
+				<div class="sets">3&nbsp;×&nbsp;12</div>
+				<div class="rest">60&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">DB&nbsp;Biceps&nbsp;Curl</div>
+				<div class="sets">3&nbsp;×&nbsp;12</div>
+				<div class="rest">60&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Optional&nbsp;Trap&nbsp;Finisher</div>
+				<div class="exo">DB&nbsp;Shrug</div>
+				<div class="sets">2&nbsp;×&nbsp;12</div>
+				<div class="rest">45&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Cardio&nbsp;(15&nbsp;min)</div>
+				<div class="exo">HIIT run</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+			</div>
+
+			<div class="workout hidden" role="table" aria-label="Day 3 Full Upper workout">
+				<div class="title">Day&nbsp;3 • Full&nbsp;Upper&nbsp;(+Legs/Core)</div>
+
+				<div class="header">Block</div>
+				<div class="header">Exercise</div>
+				<div class="header sets">Sets&nbsp;×&nbsp;Reps</div>
+				<div class="header rest">Rest</div>
+				<div class="header" style="text-align: center">✓</div>
+
+				<div>Warm-up&nbsp;(5&nbsp;min)</div>
+				<div class="exo">Jump-rope — <strong>2&nbsp;min</strong> steady</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">Push-ups ×&nbsp;20</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Main&nbsp;Lifts</div>
+				<div class="exo">Incline&nbsp;DB&nbsp;Bench&nbsp;Press</div>
+				<div class="sets">3&nbsp;×&nbsp;10</div>
+				<div class="rest">60–90&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="bent-over-row">DB&nbsp;Bent-Over&nbsp;Row</div>
+				<div class="sets">3&nbsp;×&nbsp;10</div>
+				<div class="rest">60–90&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="bench-dips">Bench&nbsp;Dips</div>
+				<div class="sets">3&nbsp;×&nbsp;12</div>
+				<div class="rest">60&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo" id="hammer-curl">Hammer&nbsp;Curl</div>
+				<div class="sets">3&nbsp;×&nbsp;12</div>
+				<div class="rest">60&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Core&nbsp;/&nbsp;Lower</div>
+				<div class="exo">Plank</div>
+				<div class="sets">2&nbsp;×&nbsp;30–45&nbsp;s</div>
+				<div class="rest">45&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div></div>
+				<div class="exo">DB&nbsp;Squats</div>
+				<div class="sets">3&nbsp;×&nbsp;12</div>
+				<div class="rest">60&nbsp;s</div>
+				<div class="check"><input type="checkbox" /></div>
+
+				<div>Cardio&nbsp;</div>
+				<div class="exo">Choice:<br />10 min Jump-rope or<br />10 min HIIT run</div>
+				<div class="sets">—</div>
+				<div class="rest">—</div>
+				<div class="check"><input type="checkbox" /></div>
+			</div>
+		</div>
+
+		<footer>Workout Plan made by <a href="https://github.com/StarPlatinumSan">StarPlatinumSan</a></footer>
+	</body>
+</html>

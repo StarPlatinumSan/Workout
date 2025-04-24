@@ -1,0 +1,232 @@
+:root {
+	--bg: #1e1e1e;
+	--cell: #222;
+	--border: #555;
+	--text: #f2f2f2;
+	--accent: #3fa9f5;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: "Kanit", sans-serif;
+	background-color: #333333;
+	min-height: 100vh;
+	color: whitesmoke;
+}
+
+button {
+	background-color: #1d1d1d;
+	border: 2px solid var(--accent);
+	font-family: "Kanit", sans-serif;
+	color: white;
+	padding: 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: #0095ff;
+	color: #1d1d1d;
+}
+
+a {
+	text-decoration: none;
+	color: var(--accent);
+}
+
+footer {
+	text-align: center;
+
+	background-color: #1e1e1e;
+	width: 100%;
+	padding: 2rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	margin: 1rem;
+}
+
+.workoutImage {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+	max-width: 300px;
+	height: auto;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.timerSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.timer {
+	font-size: 4rem;
+	padding: 1rem;
+	background-color: var(--accent);
+	transition: all 0.1s ease;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.start {
+	background-image: url(assets/play.svg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.pause {
+	background-image: url(assets/pause.svg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.reset {
+	background-image: url(assets/reset.svg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.workoutSection {
+	display: flex;
+	gap: 0.5rem;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.day {
+	font-size: 0.9rem;
+	padding: 1rem;
+	background-color: #1d1d1d;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	width: 100px;
+	text-align: center;
+	border: 2px solid #333;
+}
+
+.workoutSection h2:hover {
+	background-color: #77c6ff;
+	color: #1d1d1d;
+}
+
+.active {
+	background-color: var(--accent);
+	border: 2px solid #0095ff;
+	color: #1d1d1d;
+}
+
+.workout {
+	width: 100%;
+	max-width: 680px;
+	display: grid;
+	grid-template-columns: 1fr 2.3fr 1fr 1fr 42px;
+	gap: 1px;
+	background: var(--border);
+}
+
+.workout > * {
+	background: var(--cell);
+	padding: 0.65rem 0.5rem;
+}
+
+.header {
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: left;
+	background: var(--accent);
+	color: #000;
+}
+
+.title {
+	grid-column: 1 / -1;
+	font-weight: 700;
+	font-size: 1.15rem;
+	letter-spacing: 0.03em;
+	background: transparent;
+	padding-bottom: 0.2rem;
+	color: var(--accent);
+}
+
+.check {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.check input {
+	transform: scale(1.25);
+	cursor: pointer;
+}
+
+.exo:hover {
+	background-color: #77c6ff;
+	color: #1d1d1d;
+	cursor: pointer;
+}
+
+.transition {
+	transform: translateY(-20px);
+}
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	opacity: 0;
+	z-index: -1;
+}
+
+@media (max-width: 605px) {
+	.sets,
+	.rest {
+		display: none;
+	}
+	.workout {
+		grid-template-columns: 1fr 2.5fr 42px;
+		font-size: 0.7rem;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	footer {
+		margin-top: 5rem;
+		min-height: 100px;
+	}
+
+	.workoutSection {
+		justify-content: center;
+	}
+
+	.container {
+		align-self: center;
+	}
+}
